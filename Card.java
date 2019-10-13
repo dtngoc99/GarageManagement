@@ -83,8 +83,8 @@ public class Card extends Motobike{
         int totalMoney;
         if(cardType==1){//xe số
             if(checkOutDay-checkInDay>0&& checkOutMonth==checkInMonth){
-                totalMoney=(checkOutDay-checkInDay)*(priceDay1*2+priceNight1);
-                if(checkInHour>=18) totalMoney-=priceDay1;
+                totalMoney=(checkOutDay-checkInDay)*(priceDay1+priceNight1);
+                if(checkInHour>=18) totalMoney+=priceDay1;
                 if(checkOutHour<=7) totalMoney-=priceDay1;
                 return totalMoney;
             }
@@ -92,8 +92,8 @@ public class Card extends Motobike{
         }
         else{//xe ga
             if(checkOutDay-checkInDay>0&& checkOutMonth==checkInMonth){
-                totalMoney=(checkOutDay-checkInDay)*(priceDay2*2+priceNight2);
-                if(checkInHour>=18) totalMoney-=priceDay2;
+                totalMoney=(checkOutDay-checkInDay)*(priceDay2+priceNight2);
+                if(checkInHour>=18) totalMoney+=priceDay2;
                 if(checkOutHour<=7) totalMoney-=priceDay2;
                 return totalMoney;
             }
